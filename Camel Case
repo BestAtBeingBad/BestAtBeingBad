@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class CamelLetters {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String toCamel = sc.nextLine();
+        String camel = CamelCase(toCamel);
+        System.out.println(camel);
+    }
+
+    public static String CamelCase(String str) {
+        int length = str.length();
+        System.out.println(length);
+        String hold;
+        String result = "";
+        for (int i = 0; i < length; i++) {
+            if(i%2 == 0) hold = str.substring(i, i+1).toUpperCase();
+            else hold = str.substring(i, i+1).toLowerCase();
+            result = result.concat(hold);
+        }
+        return result;
+    }
+}
